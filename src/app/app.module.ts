@@ -9,6 +9,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from "app/posts.service";
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 // Define the routes
 const ROUTES = [
@@ -32,7 +33,8 @@ const ROUTES = [
     AppComponent,
     PostsComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
