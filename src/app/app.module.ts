@@ -7,12 +7,18 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from "app/posts.service";
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 // Define the routes
 const ROUTES = [
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: '',
-    redirectTo: 'posts',
+    component: HomeComponent,
     pathMatch: 'full'
   },
   {
@@ -24,7 +30,9 @@ const ROUTES = [
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent
+    PostsComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
