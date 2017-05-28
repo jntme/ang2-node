@@ -14,15 +14,17 @@ router.get('/', (req, res) => {
 // create a new user account (POST http://localhost:8080/api/signup)
 router.post('/signup', function(req, res) {
 
-    if (!req.body.name || !req.body.password) {
-        res.json({ success: false, msg: 'Please pass name and password.' });
+    if (!req.body.name || !req.body.password || !req.body.email) {
+        res.json({ success: false, msg: 'Please pass name, password and e-mail.' });
     } else {
         debug("req.body.name: " + req.body.name);
         debug("req.body.password: " + req.body.password);
+        debug("req.body.email: " + req.body.email);
 
         var newUser = new User({
             name: req.body.name,
-            password: req.body.password
+            password: req.body.password,
+            email: req.body.email
         });
         debug('new user: ' + newUser);
 

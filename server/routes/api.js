@@ -52,7 +52,14 @@ router.get('/memberinfo', passport.authenticate('jwt', { session: false }), func
                 return res.status(403).send({ success: false, msg: 'Authentication failed. User not found.' });
             } else {
                 debug("Authentication true!");
-                res.json({ success: true, msg: 'Welcome in the member area ' + user.name + '!' });
+                res.json({
+                    success: true,
+                    memberinfo: {
+                        'name': user.name,
+                        email: user.email
+                    }
+
+                });
             }
         });
     } else {
