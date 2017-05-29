@@ -34,7 +34,7 @@ app.use(morgan('dev'));
 // app.use(passport.initialize());
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Set our api routes
 app.use('/api', api);
@@ -42,7 +42,7 @@ app.use('/auth', auth);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 /**
